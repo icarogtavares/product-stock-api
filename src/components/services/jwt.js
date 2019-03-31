@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const securityParams = require('../../config/config').security;
+const securityParams = require('../../config').security;
 
 /**
  * Gera o token para o login do usuário com validade de 7 dias
