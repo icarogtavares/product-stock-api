@@ -25,6 +25,7 @@
     "mysql2": "^1.6.5",
     "pm2": "^3.4.1",
     "sequelize": "^5.2.7",
+    "validator": "^10.11.0",
     "winston": "^3.2.1"
   },
   "devDependencies": {
