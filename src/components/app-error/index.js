@@ -4,4 +4,4 @@ const errorManagement = require('./error-management');
 module.exports = {
   AppError,
   errorManagement,
-}
+};
