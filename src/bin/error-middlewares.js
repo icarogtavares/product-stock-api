@@ -1,4 +1,6 @@
-const { AppError, errorManagement } = require('./components/app-error')
+const status = require('http-status');
+
+const { AppError, errorManagement } = require('../components/app-error');
 
 const notFoundMiddleware = (req, res, next) => {
   const err = new AppError('Request not found', status.NOT_FOUND);
