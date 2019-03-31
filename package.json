@@ -7,7 +7,14 @@
   "main": "src/bin/www",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "pm2-runtime start ecosystem.config.js --env production",
+    "dev": "pm2 start ecosystem.config.js",
+    "dev:nodemon": "NODE_ENV=development DEBUG=product-stock-api:* nodemon ./src/bin/www",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "mocha --recursive --opts test/mocha.opts ",
+    "test:unit": "mocha --opts test/mocha.opts test/unit/**/*.js",
+    "test:functional": "mocha --opts test/mocha.opts test/functional/**/*.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -21,7 +28,10 @@
     "morgan": "~1.9.1",
     "mysql2": "^1.6.5",
     "pm2": "^3.4.1",
-    "sequelize": "^5.2.7"
+    "sequelize": "^5.2.7",
+    "supertest": "^4.0.2",
+    "validator": "^10.11.0",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
     "chai": "^4.2.0",
