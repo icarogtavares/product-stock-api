@@ -8,7 +8,8 @@
   "private": true,
   "scripts": {
     "start": "pm2-runtime start ecosystem.config.js --env production",
-    "dev": "NODE_ENV=development DEBUG=product-stock-api:* nodemon ./src/bin/www",
+    "dev": "pm2 start ecosystem.config.js",
+    "dev:nodemon": "NODE_ENV=development DEBUG=product-stock-api:* nodemon ./src/bin/www",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "mocha --recursive --opts test/mocha.opts ",

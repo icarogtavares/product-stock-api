@@ -11,6 +11,7 @@ module.exports = {
     max_memory_restart: '1G',
     env: {
       NODE_ENV: 'development',
+      DEBUG: 'product-stock-api:*',
     },
     env_production: {
       NODE_ENV: 'production',

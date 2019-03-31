@@ -1,5 +1,6 @@
 /* eslint-disable no-use-before-define, no-shadow, no-restricted-globals */
 
+require('dotenv').config();
 const debug = require('debug')('product-stock-api:server');
 const http = require('http');
 
