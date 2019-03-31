@@ -1,14 +1,14 @@
-var express = require('express');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const express = require('express');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
 const {
   notFoundMiddleware,
   handleErrorMiddleware,
   sendErrorMiddleware,
-} = require('./bin/error-middlewares')
+} = require('./bin/error-middlewares');
 
-var app = express();
+const app = express();
 
 app.use(logger('dev'));
 app.use(express.json());
