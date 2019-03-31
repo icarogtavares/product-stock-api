@@ -1,9 +1,9 @@
-#!/usr/bin/env node
+/* eslint-disable no-use-before-define, no-shadow, no-restricted-globals */
 
-const app = require('../app');
 const debug = require('debug')('product-stock-api:server');
 const http = require('http');
 
+const app = require('../app');
 const { errorManagement } = require('../components/app-error');
 
 const port = normalizePort(process.env.PORT || '3000');
@@ -17,7 +17,7 @@ server.on('listening', onListening);
 process.on('uncaughtException', onUncaughtException);
 process.on('unhandledRejection', onUnhandledRejection);
 
-function normalizePort(val) {
+function normalizePort (val) {
   const port = parseInt(val, 10);
 
   if (isNaN(port)) {
@@ -31,7 +31,7 @@ function normalizePort(val) {
   return false;
 }
 
-function onError(error) {
+function onError (error) {
   if (error.syscall !== 'listen') {
     throw error;
   }
@@ -44,17 +44,15 @@ function onError(error) {
     case 'EACCES':
       console.error(`${bind} requires elevated privileges`);
       process.exit(1);
-      break;
     case 'EADDRINUSE':
       console.error(`${bind} is already in use`);
       process.exit(1);
-      break;
     default:
       throw error;
   }
 }
 
-function onListening() {
+function onListening () {
   const addr = server.address();
   const bind = typeof addr === 'string'
     ? `pipe ${addr}`
