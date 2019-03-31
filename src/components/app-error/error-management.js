@@ -6,9 +6,7 @@ const { logger } = require('../../bin/logger');
  * Retorna se um erro é esperado ou não
  * @param {Error} error - Objeto do tipo Error
  */
-const isTrustedError = (error) => {
-  return error.isOperational;
-}
+const isTrustedError = error => error.isOperational;
 
 /**
  * Trata o erro recebido
@@ -36,7 +34,7 @@ const handleError = (error) => {
   }
 
   return errorHandled;
-}
+};
 
 module.exports = {
   isTrustedError,
